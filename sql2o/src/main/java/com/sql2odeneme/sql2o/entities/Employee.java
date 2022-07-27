@@ -24,7 +24,7 @@ public class Employee {
 	@Column(name="Id")
 	private int id;
 	
-	@NotBlank(message="Boş Bırakılmazzz")
+	@NotBlank(message="Boş Bırakılmaz!!")
 	@Column(name="first_name")
 	private String firstName;
 
