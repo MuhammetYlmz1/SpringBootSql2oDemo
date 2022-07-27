@@ -24,7 +24,7 @@ public class Employee {
 	@Column(name="Id")
 	private int id;
 	
-	@NotBlank(message="Boş Bırakılmaz!!")
+	@NotBlank(message="İsim Kısmı Boş Bırakılamaz")
 	@Column(name="first_name")
 	private String firstName;
 
