@@ -27,8 +27,8 @@ public class Employee {
 	@Column(name="Id")
 	private int id;
 	
-	@NotBlank(message="İsim Kısmı Boş Bırakılamaz")
-	@Size(min=2,message="First Name should have at least 2 character")
+	@NotBlank(message="Ad Kısmı Boş Bırakılamaz")
+	@Size(min=2,message="Ad Kısmı En Az 2 Karakterden Oluşmalıdır")
 	@Column(name="first_name")
 	private String firstName;
 
