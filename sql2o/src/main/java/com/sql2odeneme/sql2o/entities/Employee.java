@@ -8,6 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,19 +28,24 @@ public class Employee {
 	private int id;
 	
 	@NotBlank(message="İsim Kısmı Boş Bırakılamaz")
+	@Size(min=2,message="First Name should have at least 2 character")
 	@Column(name="first_name")
 	private String firstName;
 
+	@NotEmpty
 	@Column(name="last_name")
 	private String lastName;
 	
 	@Email
+	@NotEmpty
 	@Column(name="email")
 	private String email;
 	
+	@NotEmpty
 	@Column(name="department")
 	private String department;
 	
+	@NotNull
 	@Column(name="salary")
 	private int salary;
 	

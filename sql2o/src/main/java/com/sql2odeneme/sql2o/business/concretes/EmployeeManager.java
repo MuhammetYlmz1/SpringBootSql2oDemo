@@ -17,8 +17,8 @@ public class EmployeeManager implements EmployeeService {
 
 
 	@Autowired
-	public EmployeeManager(IEmployeeDao cityDao) {
-		this.employeeDao = cityDao;
+	public EmployeeManager(IEmployeeDao employeeDao) {
+		this.employeeDao = employeeDao;
 	}
 	public EmployeeManager() {}
 

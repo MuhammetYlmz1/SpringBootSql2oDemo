@@ -5,6 +5,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,8 +37,8 @@ public class EmployeeController  implements WebMvcConfigurer{
 	@PostMapping("/add")
 	public ResponseEntity<String> addEmployee(@Valid @RequestBody Employee employee) {
 		
-		employeeService.addEmployee(employee);		
-		 return ResponseEntity.ok("User is valid");
+		 employeeService.addEmployee(employee);		
+		 return new ResponseEntity<String>("Çalışan Eklendi",HttpStatus.ACCEPTED);
 		
 	}
 	@GetMapping("/getEmployeeCount")

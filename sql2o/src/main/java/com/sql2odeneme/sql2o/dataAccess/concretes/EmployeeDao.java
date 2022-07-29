@@ -38,7 +38,7 @@ public class EmployeeDao implements IEmployeeDao {
 		String sql="insert into employee (first_name,last_name,email,department,salary) "+"values (:firstName,:lastName,:email,:department,:salary)";
 		
 	
-		Connection con=sql2o.beginTransaction();
+		try(Connection con=sql2o.beginTransaction()){
 			con.createQuery(sql,true)
 			
 			.addParameter("firstName", employee.getFirstName())
@@ -47,10 +47,13 @@ public class EmployeeDao implements IEmployeeDao {
 			.addParameter("department", employee.getDepartment())
 			.addParameter("salary", employee.getSalary())
 			.executeUpdate();
-			
 			con.commit();
+		}
+			
 			
 	}
+	
+	
 	
 	public int getEmployeeCount() {
 		String sql="Select count(id) from employee";
