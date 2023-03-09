@@ -36,5 +36,26 @@ public class EmployeeManager implements EmployeeService {
 	public int getEmployeeCount() {
 		return employeeDao.getEmployeeCount();
 	}
+	@Override
+	public Employee getById(int id) {
+		
+		
+		return employeeDao.getById(id);
+	}
+	@Override
+	public Employee updateEmployee( Employee employee) {
+		return employeeDao.updateEmployee( employee);
+		
+	}
+	@Override
+	public void deleteEmployee(int id) {
+		employeeDao.deleteEmployee(id);
+		
+	}
+	@Override
+	public List<Employee> findByFirstNameAndLastName(String firstName, String lastName) {
+		
+		return employeeDao.findByFirstNameAndLastName(firstName, lastName);
+	}
 
 }
